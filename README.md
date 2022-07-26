@@ -22,8 +22,9 @@ Workflow Templates consist of YAML definitions and Docker images that define a D
 - [TensorFlow training](https://github.com/onepanelio/templates/blob/master/workflows/tensorflow-mnist-training) - Simple MNIST training example using TensorFlow.
 - [TensorFlow Object Detection training](https://github.com/onepanelio/templates/blob/master/workflows/tf-object-detection-training) - Workflow for object detection model training fully integrated with CVAT and included in Onepanel deployment. 
 
-📍The following templates have been tested and are ready to use in AIMP. 
+📍The following workflow templates have been tested and are ready for deployment in AIMP. 
 
+- ✔[Hyperparameter tuning](https://github.com/chuangxinyuan/templates/blob/master/workflows/hyperparameter-tuning) - Hyperparameter tuning Workflow using [NNI](https://github.com/microsoft/nni). Included in AIMP deployment. Hyperparameter tuning task is followed by a Metrics Writer task, so that you can view the best model performance metrics under Artifacts in the task info pane. 
 - ✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training) - Simple MNIST training example using PyTorch. Model training task is followed by a Metrics Writer task, so that you can view model performance metrics under Artifacts in the task info pane.
 - ✔[TensorFlow Object Detection training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tf-object-detection-training) - Workflow for object detection model training fully integrated with CVAT and included in AIMP deployment. The pip source has been changed to Tsinghua Source. 
 
