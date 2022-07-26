@@ -52,7 +52,7 @@ def save_best_metrics(loss, accuracy):
 
     # Get existing metrics if any
     try:
-        with open('/tmp/sys-metrics.json') as f:
+        with open('/mnt/output/sys-metrics.json') as f:
             prev_metrics = json.load(f)
             prev_accuracy = [m['value'] for m in prev_metrics if m['name'] == 'accuracy'][0]
     except FileNotFoundError:
@@ -66,7 +66,7 @@ def save_best_metrics(loss, accuracy):
         {'name': 'accuracy', 'value': accuracy},
         {'name': 'loss', 'value': loss}
     ]
-    with open('/tmp/sys-metrics.json', 'w') as f:
+    with open('/mnt/output/sys-metrics.json', 'w') as f:
         json.dump(metrics, f)
 
     _logger.info('Best metrics saved')
