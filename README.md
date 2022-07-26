@@ -24,6 +24,7 @@ Workflow Templates consist of YAML definitions and Docker images that define a D
 
 📍The following templates have been tested and are ready to use in AIMP. 
 
+- ✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training) - Simple MNIST training example using PyTorch. Model training task is followed by a Metrics Writer task, so that you can view model performance metrics under Artifacts in the task info pane.
 - ✔[TensorFlow Object Detection training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tf-object-detection-training) - Workflow for object detection model training fully integrated with CVAT and included in AIMP deployment. The pip source has been changed to Tsinghua Source. 
 
 ### Workspace Templates
