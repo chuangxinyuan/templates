@@ -58,7 +58,6 @@ arguments:
           epochs:
             _type: choice
             _value: [10]
-
     # Node pool dropdown (Node group in EKS)
     # You can add more of these if you have additional tasks that can run on different node pools
     - displayName: Node pool
@@ -154,8 +153,8 @@ templates:
       - name: sys-metrics
         path: /mnt/output
       - git:
-          repo: https://github.com/chuangxinyuan/templates.git
-          revision: master
+          repo: '{{workflow.parameters.source}}'
+          revision: '{{workflow.parameters.revision}}'
         name: src
         path: /mnt/src
     container:
