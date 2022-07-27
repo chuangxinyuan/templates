@@ -82,7 +82,7 @@ templates:
             # This writes the best metrics to the Workflow
             artifacts:
               - name: sys-metrics
-                from: "{{tasks.hyperparameter-tuning.outputs.artifacts.sys-metrics}}"
+                from: "{{tasks.hyperparameter-tuning.outputs.artifacts.output}}"
   - name: hyperparameter-tuning
     inputs:
       artifacts:
