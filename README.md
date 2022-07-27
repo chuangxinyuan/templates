@@ -37,6 +37,10 @@ Workspace Templates consist of YAML definitions and Docker images that define st
 - [Ubuntu VNC](https://github.com/onepanelio/templates/blob/master/workspaces/vnc) (alpha) - A full Ubuntu instance accessible in your web browser.
 - [Visual Studio Code](https://github.com/onepanelio/templates/blob/master/workspaces/vscode) - A lightweight but powerful source code editor which has support for just about everything. 
 
+📍The following worksapce templates have been tested and are ready for deployment in AIMP. 
+- ✔[CVAT](https://github.com/onepanelio/templates/blob/master/workspaces/cvat) - An interactive video and image annotation tool for computer vision.
+- ✔[JupyterLab](https://github.com/onepanelio/templates/blob/master/workspaces/jupyterlab) - An extensible environment for interactive and reproducible computing, based on Jupyter Notebook.
+
 ### Sidecars
 Sidecars are components that extend your Workspace or Workflow Tasks.
 
