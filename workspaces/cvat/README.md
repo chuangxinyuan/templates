@@ -1,3 +1,6 @@
+# AIMP use temlate_CVAT_1.6.0.yaml 
+1. temlate_CVAT_1.6.0.yaml corresponding to CVAT_1.6.0 in AIMP
+1. template.yaml corresponds to CVAT in AIMP
 # OpenCV CVAT Workspace
 
 ## Docker images
