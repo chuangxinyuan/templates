@@ -7,7 +7,7 @@ containers:
       - name: tornado
         value: "'{'headers':{'Content-Security-Policy':\"frame-ancestors\ *\ 'self'\"}}'"
       - name: TENSORBOARD_PROXY_URL
-        value: '//$(ONEPANEL_RESOURCE_UID)--$(ONEPANEL_RESOURCE_NAMESPACE).$(ONEPANEL_DOMAIN)/tensorboard'
+        value: '//$(ONEPANEL_RESOURCE_UID).$(ONEPANEL_RESOURCE_NAMESPACE).$(ONEPANEL_DOMAIN)/tensorboard'
     ports:
       - containerPort: 8888
         name: jupyterlab
