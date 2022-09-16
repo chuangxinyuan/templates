@@ -1,5 +1,5 @@
 # 模版目录
-INESA AIIC AIMP 中工作流、工作区、任务和边车的模板目录。
+上海仪电人工智能创新院AI中台中工作流、工作区、任务和边车的模板目录。
 
 ## 快速上手
 入门最好先了解 AIMP 的[概念](https://docs.dev.aimpcloud.cn)。
@@ -9,17 +9,17 @@ INESA AIIC AIMP 中工作流、工作区、任务和边车的模板目录。
 - [工作区模版](https://docs.onepanel.ai/docs/reference/workspaces/templates)
 - [工作流模版](https://docs.onepanel.ai/docs/reference/workflows/templates)
 
-## Catalog overview
+## 目录概览
 
 ### 公开工作流模板
 工作流模板由 YAML 定义和在 AIMP 中定义 DAG 的 Docker 映像组成。
 
-📍如下工作流模板已经测试通过，并且可以在AIMP中部署. 
+📍如下工作流模板已经测试通过，并且可以在 AIMP 中部署。 
 |工作流模板YAML文件位置|AIMP中工作流模板名称|描述|执行位置|
 | ------------- | ------------- | ------------- | ------------- |
 |✔[example models serving test](https://github.com/chuangxinyuan/aimp-examples/tree/master/aimp-serving)|aimp-serving-examples|参考 aimp-serving-test-flow.yaml，运行 aimp-serving-examples 工作流，选择 sample-name 下面的模型，然后执行，可以从流日志中查看相应的执行效果|AIMP 中直接执行|
-|✔[Hyperparameter tuning](https://github.com/chuangxinyuan/templates/blob/master/workflows/hyperparameter-tuning)|Hyperparameter Tuning Example|Hyperparameter tuning Workflow using [NNI](https://github.com/microsoft/nni). 包含在 AIMP 部署中。 超参数调优任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看最佳模型性能指标。 | AIMP 中直接执行|
-|✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training)|PyTorch Training|Simple MNIST training example using PyTorch. 模型训练任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看模型性能指标。包含在 AIMP 部署中。| AIMP 中直接执行|
+|✔[Hyperparameter tuning](https://github.com/chuangxinyuan/templates/blob/master/workflows/hyperparameter-tuning)|Hyperparameter Tuning Example|超参数优化工作流使用 [NNI](https://github.com/microsoft/nni)，并包含在 AIMP 部署中。 超参数调优任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看最佳模型性能指标。 | AIMP 中直接执行|
+|✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training)|PyTorch Training|使用PyTorch训练MNIST手写体识别的简单示例。 模型训练任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看模型性能指标。包含在 AIMP 部署中。| AIMP 中直接执行|
 |✔[TensorFlow Object Detection training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tf-object-detection-training) |TF Object Detection Training|目标检测模型训练的工作流程与 CVAT 完全集成并包含在 AIMP 部署中。 pip 源已更改为清华源。 包含在 AIMP 部署中。| CVAT 工作区中执行|
 
 以下工作流模板未经测试：
@@ -31,7 +31,7 @@ INESA AIIC AIMP 中工作流、工作区、任务和边车的模板目录。
 ### 公开工作区模板
 工作区模板由 YAML 定义和定义有状态实例的 Docker 映像组成，例如 JupyterLab、CVAT 和任何其他 IDE。
 
-📍如下工作区模板已经测试通过，并且可以在AIMP中部署.  
+📍如下工作区模板已经测试通过，并且可以在AIMP中部署。  
 |工作区模板YAML文件位置|AIMP中工作区模板名称|描述|执行位置|
 | ------------- | ------------- | ------------- | ------------- |
 |✔[CVAT](https://github.com/onepanelio/templates/blob/master/workspaces/cvat)|CVAT_1.6.0|用于计算机视觉的交互式视频和图像注释工具。| AIMP中直接执行|
