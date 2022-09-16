@@ -21,6 +21,8 @@
 |✔[Hyperparameter tuning](https://github.com/chuangxinyuan/templates/blob/master/workflows/hyperparameter-tuning)|Hyperparameter Tuning Example|超参数优化工作流使用 [NNI](https://github.com/microsoft/nni)，并包含在 AIMP 部署中。 超参数调优任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看最佳模型性能指标。 | AIMP 中直接执行|
 |✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training)|PyTorch Training|使用PyTorch训练MNIST手写体识别的简单示例。 模型训练任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看模型性能指标。包含在 AIMP 部署中。| AIMP 中直接执行|
 |✔[TensorFlow Object Detection training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tf-object-detection-training) |TF Object Detection Training|目标检测模型训练的工作流程与 CVAT 完全集成并包含在 AIMP 部署中。 pip 源已更改为清华源。 包含在 AIMP 部署中。| CVAT 工作区中执行|
+|✔[license-plate-detection](https://github.com/chuangxinyuan/LicensePlateOcr) |license-plate-detection|此工作流中，将使用车牌检测和车牌识别 (OCR) 的示例来演示 AIMP 如何帮助您简化在 Kubernetes 上构建易于扩展和可迁移的深度学习工作流的过程。|最佳实践中执行|
+|✔[Ensemble Multiple Models Demo](https://github.com/chuangxinyuan/ensembleObjectDetection) |Ensemble Multiple Models Demo|此示例以一个集成推理的例子作为演示。在这里，我们将使用多个目标检测模型来生成推理结果，然后使用集成策略得出最终输出。|最佳实践中执行|
 
 以下工作流模板未经测试：
 - [Albumentations data pre-processing](https://github.com/onepanelio/templates/blob/master/workflows/albumentations-preprocessing) - 此工作流包含在 [TFOD](https://github.com/onepanelio/templates/tree/release-v0.18.0/workflows/tf-object-detection-training) 以及 [MaskRCNN](https://github.com/onepanelio/templates/tree/release-v0.18.0/workflows/maskrcnn-training) 训练工作流，并允许您在训练之前对数据应用不同的增强。
