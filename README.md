@@ -2,7 +2,7 @@
 INESA AIIC AIMP 中工作流、工作区、任务和边车的模板目录。
 
 ## 快速上手
-入门最好先了解 AIMP 的【概念】（https://docs.dev.aimpcloud.cn）。
+入门最好先了解 AIMP 的[概念](https://docs.dev.aimpcloud.cn)。
 
 有关如何构建这些模板的更多信息，请参阅以下参考资料：
 
