@@ -44,10 +44,14 @@ def split_dataset(dataset_name: str='instances_default.json', val_split: float=0
                         new_annotation['segmentation'].append(segmentation)
                 val_set['annotations'].append(new_annotation)
             old_filename = new_image['file_name'].split('/')[-1]
+            #fix path bug
+            old_filename_full = new_image['file_name']
             img_sufix = old_filename.split('.')[-1]
             new_image['file_name'] = '{:04d}.'.format(image_id)+img_sufix
             val_set['images'].append(new_image)
-            shutil.copyfile(input_path+'images/'+old_filename,output_path+'eval_set/images/'+new_image['file_name'])
+            shutil.copyfile(input_path+'images/'+old_filename_full,output_path+'eval_set/images/'+new_image['file_name'])
+            print('\nniu************log old_filename_full: ')
+            print(old_filename_full)
         else:
             image_id = len(train_set['images'])
             new_image['id'] = image_id
@@ -62,10 +66,14 @@ def split_dataset(dataset_name: str='instances_default.json', val_split: float=0
                         new_annotation['segmentation'].append(segmentation)
                 train_set['annotations'].append(new_annotation)
             old_filename = new_image['file_name'].split('/')[-1]
+            #fix path bug
+            old_filename_full = new_image['file_name']
             img_sufix = old_filename.split('.')[-1]
             new_image['file_name'] = '{:04d}.'.format(image_id)+img_sufix
             train_set['images'].append(new_image)
-            shutil.copyfile(input_path+'images/'+old_filename,output_path+'train_set/images/'+new_image['file_name'])
+            shutil.copyfile(input_path+'images/'+old_filename_full,output_path+'train_set/images/'+new_image['file_name'])
+            print('\nniu************log old_filename_full: ')
+            print(old_filename_full)
 
     save_datasets(output_path, train_set, val_set)
 
