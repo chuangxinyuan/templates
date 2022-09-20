@@ -90,7 +90,7 @@ arguments:
           name: sys-node-pool
           required: true
           type: select.nodepool
-          value: 'Standard_B4ms'
+          value: 'default'
           visibility: public
 entrypoint: main
 templates:
