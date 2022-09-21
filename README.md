@@ -1,13 +1,13 @@
 # 模版目录
-上海仪电人工智能创新院AI中台中工作流、工作区、任务和边车的模板目录。
+上海仪电人工智能创新院AI中台(以下简称AIMP）中工作流、工作区、任务和边车的模板目录。
 
 ## 快速上手
 入门最好先了解 AIMP 的[概念](https://docs.dev.aimpcloud.cn)。
 
 有关如何构建这些模板的更多信息，请参阅以下参考资料：
 
-- [工作区模版](https://docs.onepanel.ai/docs/reference/workspaces/templates)
-- [工作流模版](https://docs.onepanel.ai/docs/reference/workflows/templates)
+- [工作区模版](https://docs.dev.aimpcloud.cn/docs/reference/workspaces/templates)
+- [工作流模版](https://docs.dev.aimpcloud.cn/docs/reference/workflows/templates)
 
 ## 目录概览
 
@@ -17,12 +17,12 @@
 📍如下工作流模板已经测试通过，并且可以在 AIMP 中部署。 
 |工作流模板YAML文件位置|AIMP中工作流模板名称|描述|执行位置|
 | ------------- | ------------- | ------------- | ------------- |
-|✔[example models serving test](https://github.com/chuangxinyuan/aimp-examples/tree/master/aimp-serving)|aimp-serving-examples|参考 aimp-serving-test-flow.yaml，运行 aimp-serving-examples 工作流，选择 sample-name 下面的模型，然后执行，可以从流日志中查看相应的执行效果|AIMP 中直接执行|
-|✔[Hyperparameter tuning](https://github.com/chuangxinyuan/templates/blob/master/workflows/hyperparameter-tuning)|Hyperparameter Tuning Example|超参数优化工作流使用 [NNI](https://github.com/microsoft/nni)，并包含在 AIMP 部署中。 超参数调优任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看最佳模型性能指标。 | AIMP 中直接执行|
-|✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training)|PyTorch Training|使用PyTorch训练MNIST手写体识别的简单示例。 模型训练任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看模型性能指标。包含在 AIMP 部署中。| AIMP 中直接执行|
-|✔[TensorFlow Object Detection training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tf-object-detection-training) |TF Object Detection Training|目标检测模型训练的工作流程与 CVAT 完全集成并包含在 AIMP 部署中。 pip 源已更改为清华源。 包含在 AIMP 部署中。| CVAT 工作区中执行|
-|✔[license-plate-detection](https://github.com/chuangxinyuan/LicensePlateOcr) |license-plate-detection|此工作流中，将使用车牌检测和车牌识别 (OCR) 的示例来演示 AIMP 如何帮助您简化在 Kubernetes 上构建易于扩展和可迁移的深度学习工作流的过程。|最佳实践中执行|
-|✔[Ensemble Multiple Models Demo](https://github.com/chuangxinyuan/ensembleObjectDetection) |Ensemble Multiple Models Demo|此示例以一个集成推理的例子作为演示。在这里，我们将使用多个目标检测模型来生成推理结果，然后使用集成策略得出最终输出。|最佳实践中执行|
+|✔[example models serving test](https://github.com/chuangxinyuan/aimp-examples/tree/master/aimp-serving)|aimp-serving-examples|参考 aimp-serving-test-flow.yaml，运行 aimp-serving-examples 工作流，选择 sample-name 下面的模型，然后执行，可以从流日志中查看相应的执行效果|在AIMP中直接执行该工作流|
+|✔[Hyperparameter tuning](https://github.com/chuangxinyuan/templates/blob/master/workflows/hyperparameter-tuning)|Hyperparameter Tuning Example|超参数优化工作流使用 [NNI](https://github.com/microsoft/nni)，并包含在 AIMP 部署中。 超参数调优任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看最佳模型性能指标。 | 在AIMP中直接执行该工作流|
+|✔[PyTorch training](https://github.com/chuangxinyuan/templates/blob/master/workflows/pytorch-mnist-training)|PyTorch Training|使用PyTorch训练MNIST手写体识别的简单示例。 模型训练任务之后是 Metrics Writer 任务，因此您可以在任务信息窗格的 Artifacts 下查看模型性能指标。包含在 AIMP 部署中。| 在AIMP中直接执行该工作流|
+|*✔[TensorFlow Object Detection training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tf-object-detection-training) |TF Object Detection Training|目标检测模型训练的工作流程与 CVAT 完全集成并包含在 AIMP 部署中。 pip 源已更改为清华源。 包含在 AIMP 部署中。| 参考[最佳实践](https://docs.dev.aimpcloud.cn/docs/bestsample/overview)中的案例执行|
+|*✔[license-plate-detection](https://github.com/chuangxinyuan/LicensePlateOcr) |license-plate-detection|此工作流中，将使用车牌检测和车牌识别 (OCR) 的示例来演示 AIMP 如何帮助您简化在 Kubernetes 上构建易于扩展和可迁移的深度学习工作流的过程。|参考[最佳实践](https://docs.dev.aimpcloud.cn/docs/bestsample/overview)中的案例执行|
+|*✔[Ensemble Multiple Models Demo](https://github.com/chuangxinyuan/ensembleObjectDetection) |Ensemble Multiple Models Demo|此示例以一个集成推理的例子作为演示。在这里，我们将使用多个目标检测模型来生成推理结果，然后使用集成策略得出最终输出。|参考[最佳实践](https://docs.dev.aimpcloud.cn/docs/bestsample/overview)中的案例执行|
 
 以下工作流模板未经测试：
 - [Albumentations data pre-processing](https://github.com/onepanelio/templates/blob/master/workflows/albumentations-preprocessing) - 此工作流包含在 [TFOD](https://github.com/onepanelio/templates/tree/release-v0.18.0/workflows/tf-object-detection-training) 以及 [MaskRCNN](https://github.com/onepanelio/templates/tree/release-v0.18.0/workflows/maskrcnn-training) 训练工作流，并允许您在训练之前对数据应用不同的增强。
