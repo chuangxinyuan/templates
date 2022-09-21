@@ -50,8 +50,8 @@ def split_dataset(dataset_name: str='instances_default.json', val_split: float=0
             new_image['file_name'] = '{:04d}.'.format(image_id)+img_sufix
             val_set['images'].append(new_image)
             shutil.copyfile(input_path+'images/'+old_filename_full,output_path+'eval_set/images/'+new_image['file_name'])
-            print('\nniu************log old_filename_full: ')
-            print(old_filename_full)
+            #print('\nniu************log old_filename_full: ')
+            #print(old_filename_full)
         else:
             image_id = len(train_set['images'])
             new_image['id'] = image_id
@@ -72,8 +72,8 @@ def split_dataset(dataset_name: str='instances_default.json', val_split: float=0
             new_image['file_name'] = '{:04d}.'.format(image_id)+img_sufix
             train_set['images'].append(new_image)
             shutil.copyfile(input_path+'images/'+old_filename_full,output_path+'train_set/images/'+new_image['file_name'])
-            print('\nniu************log old_filename_full: ')
-            print(old_filename_full)
+            #print('\nniu************log old_filename_full: ')
+            #print(old_filename_full)
 
     save_datasets(output_path, train_set, val_set)
 
