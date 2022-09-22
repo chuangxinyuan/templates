@@ -11,7 +11,7 @@
 
 ## 目录概览
 
-### 公开工作流模板
+### 公共工作流模板
 工作流模板由 YAML 定义和在 AIMP 中定义 DAG 的 Docker 映像组成。
 
 📍如下工作流模板已经测试通过，并且可以在 AIMP 中部署。 
@@ -30,7 +30,7 @@
 - [MaskRCNN training](https://github.com/chuangxinyuan/templates/blob/master/workflows/maskrcnn-training) - 语义分割模型训练的工作流与 CVAT 完全集成并包含在 AIMP 部署中。
 - [TensorFlow training](https://github.com/chuangxinyuan/templates/blob/master/workflows/tensorflow-mnist-training) - 使用 TensorFlow 的简单 MNIST 训练示例。
 
-### 公开工作区模板
+### 公共工作区模板
 工作区模板由 YAML 定义和定义有状态实例的 Docker 映像组成，例如 JupyterLab、CVAT 和任何其他 IDE。
 
 📍如下工作区模板已经测试通过，并且可以在AIMP中部署。  
