@@ -40,8 +40,9 @@
 |✔[CVAT](https://github.com/chuangxinyuan/templates/blob/master/workspaces/cvat)|CVAT_1.6.0**|用于计算机视觉的交互式视频和图像注释工具。| AIMP中直接执行|
 |✔[JupyterLab](https://github.com/chuangxinyuan/templates/blob/master/workspaces/jupyterlab)|JupyterLab|基于 Jupyter Notebook 的交互式和可重复计算的可扩展环境。| AIMP中直接执行|
 
-* CVAT 目前支持的上传标注格式有限，如果希望获得更完整的上传数据标注功能体验，建议选择 CVAT_1.6.0 模板。
-** CVAT_1.6.0 目前自动标注功能还在开发中，如果希望使用自动标注功能，建议选择 CVAT 模板。
+\* CVAT 目前支持的上传标注格式有限，如果希望获得更完整的上传数据标注功能体验，建议选择 CVAT_1.6.0 模板。
+
+\** CVAT_1.6.0 目前自动标注功能还在开发中，如果希望使用自动标注功能，建议选择 CVAT 模板。
 
 以下工作流模板未经测试：
 - [Eclipse Theia](https://github.com/chuangxinyuan/templates/blob/master/workspaces/theia) - 一个可扩展的平台，用于使用最先进的 Web 技术开发多语言云和桌面 IDE。
