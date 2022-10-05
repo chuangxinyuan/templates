@@ -8,7 +8,7 @@ containers:
           value: trust
         - name: PGDATA
           value: /var/lib/psql/data
-      image: postgres:10-alpine
+      image: cxyacr.azurecr.cn/docker.io/postgres:10-alpine
       name: cvat-db
       ports:
         - containerPort: 5432
@@ -16,7 +16,7 @@ containers:
       volumeMounts:
         - mountPath: /var/lib/psql
           name: db
-    - image: redis:4.0-alpine
+    - image: cxyacr.azurecr.cn/docker.io/redis:4.0-alpine
       name: cvat-redis
       ports:
         - containerPort: 6379
@@ -58,7 +58,7 @@ containers:
           value: "true"
         - name: CVAT_SERVERLESS
           value: true
-      image: onepanel/cvat:v1.0.2_cvat.1.6.0
+      image: cxyacr.azurecr.cn/docker.io/onepanel/cvat:v1.0.2_cvat.1.6.0
       name: cvat
       ports:
         - containerPort: 8080
@@ -71,7 +71,7 @@ containers:
         - mountPath: /etc/onepanel
           name: sys-namespace-config
           readOnly: true
-    - image: onepanel/cvat-ui:v1.0.2_cvat.1.6.0
+    - image: cxyacr.azurecr.cn/docker.io/onepanel/cvat-ui:v1.0.2_cvat.1.6.0
       name: cvat-ui
       ports:
         - containerPort: 80
@@ -79,8 +79,8 @@ containers:
     - args:
         - server
         - -server-prefix=/sys/filesyncer
-      image: onepanel/filesyncer:v1.0.0
-      imagePullPolicy: Always
+      image: cxyacr.azurecr.cn/docker.io/onepanel/filesyncer:v1.0.0
+      imagePullPolicy: IfNotPresent
       name: sys-filesyncer
       volumeMounts:
         - mountPath: /share
