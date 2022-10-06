@@ -15,7 +15,7 @@ arguments:
     # [CHANGE] Revision is the branch or tag that you want to use
     # You can change this to any tag or branch name in your repository
     - name: revision
-      value: master
+      value: aimp-v0.95
 
     # [CHANGE] Default configuration for the NNI tuner
     # See https://docs.aimpcloud.shaiic.com/docs/reference/workflows/hyperparameter-tuning#了解配置

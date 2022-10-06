@@ -182,7 +182,7 @@ templates:
         path: /mnt/output
       - git:
           repo: https://gitee.com/chuangxinyuan/templates.git
-          revision: master
+          revision: aimp-v0.95
         name: src
         path: /mnt/src
     container:

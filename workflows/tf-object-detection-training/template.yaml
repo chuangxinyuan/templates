@@ -79,11 +79,11 @@ arguments:
           name: tf-image
           options:
             - name: TensorFlow 1.13.1 CPU Image
-              value: tensorflow/tensorflow:1.13.1-py3
+              value: cxyacr.azurecr.cn/docker.io/tensorflow/tensorflow:1.13.1-py3
             - name: TensorFlow 1.13.1 GPU Image
-              value: tensorflow/tensorflow:1.13.1-gpu-py3
+              value: cxyacr.azurecr.cn/docker.io/tensorflow/tensorflow:1.13.1-gpu-py3
           type: select.select
-          value: tensorflow/tensorflow:1.13.1-py3
+          value: cxyacr.azurecr.cn/docker.io/tensorflow/tensorflow:1.13.1-py3
           visibility: public
         - displayName: Node pool
           hint: Name of node pool or group to run this workflow task
@@ -117,7 +117,7 @@ templates:
               cd /mnt/src/tf/research && \
               export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim && \
               mkdir -p /mnt/src/protoc && \
-              wget -P /mnt/src/protoc https://github.com/protocolbuffers/protobuf/releases/download/v3.10.1/protoc-3.10.1-linux-x86_64.zip && \
+              wget -P /mnt/src/protoc https://shaiicpublic.blob.core.chinacloudapi.cn/onepanel/protoc-3.10.1-linux-x86_64.zip && \
               cd /mnt/src/protoc/ && \
               unzip protoc-3.10.1-linux-x86_64.zip && \
               cd /mnt/src/tf/research/ && \
@@ -155,7 +155,7 @@ templates:
               path: /mnt/src/tf
             - git:
                 repo: https://github.com/chuangxinyuan/templates.git
-                revision: master
+                revision: aimp-v0.95
               name: tsrc
               path: /mnt/src/train
       name: tensorflow
@@ -209,7 +209,7 @@ templates:
                 key: '{{workflow.parameters.cvat-annotation-path}}'
             - git:
                 repo: https://github.com/chuangxinyuan/templates.git
-                revision: master
+                revision: aimp-v0.95
               name: src
               path: /mnt/src/preprocessing
       name: preprocessing
