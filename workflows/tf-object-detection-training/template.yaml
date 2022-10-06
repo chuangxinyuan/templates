@@ -149,7 +149,7 @@ templates:
               s3:
                 key: '{{workflow.parameters.cvat-finetune-checkpoint}}'
             - git:
-                repo: https://github.com/tensorflow/models.git
+                repo: https://github.com/chuangxinyuan/models.git
                 revision: v1.13.0
               name: src
               path: /mnt/src/tf
