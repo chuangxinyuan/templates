@@ -34,7 +34,7 @@ templates:
           path: /mnt/output
           optional: true
     script:
-      image: onepanel/dl:0.17.0
+      image: cxyacr.azurecr.cn/docker.io/onepanel/dl:v0.20.0
       command:
         - python
         - '-u'
@@ -158,10 +158,10 @@ templates:
         - name: output
           mountPath: /mnt/output
     nodeSelector:
-      node.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
+      beta.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
     sidecars:
       - name: tensorboard
-        image: onepanel/dl:0.17.0
+        image: cxyacr.azurecr.cn/docker.io/onepanel/dl:v0.20.0
         command:
           - sh
           - '-c'
@@ -181,12 +181,12 @@ templates:
       - name: sys-metrics
         path: /mnt/output
       - git:
-          repo: https://github.com/onepanelio/templates.git
-          revision: v0.18.0
+          repo: https://gitee.com/chuangxinyuan/templates.git
+          revision: master
         name: src
         path: /mnt/src
     container:
-      image: onepanel/python-sdk:v0.19.0
+      image: cxyacr.azurecr.cn/docker.io/onepanel/python-sdk:v0.19.0
       command:
         - python
         - -u
