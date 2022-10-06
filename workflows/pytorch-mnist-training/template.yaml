@@ -34,7 +34,7 @@ templates:
           path: /mnt/output
           optional: true
     script:
-      image: cxyacr.azurecr.cn/docker.io/onepanel/dl:v0.20.0
+      image: cxyacr.azurecr.cn/docker.io/onepanel/dl:0.17.0
       command:
         - python
         - '-u'
@@ -161,7 +161,7 @@ templates:
       beta.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
     sidecars:
       - name: tensorboard
-        image: cxyacr.azurecr.cn/docker.io/onepanel/dl:v0.20.0
+        image: cxyacr.azurecr.cn/docker.io/onepanel/dl:0.17.0
         command:
           - sh
           - '-c'
