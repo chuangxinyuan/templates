@@ -51,7 +51,8 @@ def main(params):
         files_dir = os.path.join(model_dir , params['model'])
         if not os.path.isdir(files_dir):
             print('base model does not exist, downloading...')
-            urllib.request.urlretrieve('https://github.com/onepanelio/templates/releases/download/v0.2.0/{}.tar'.format(params['model']), os.path.join(model_dir , 'model.tar'))
+            # urllib.request.urlretrieve('https://github.com/onepanelio/templates/releases/download/v0.2.0/{}.tar'.format(params['model']), os.path.join(model_dir , 'model.tar'))
+	    urllib.request.urlretrieve('https://shaiicpublic.blob.core.chinacloudapi.cn/onepanel/{}.tar'.format(params['model']), os.path.join(model_dir , 'model.tar'))
             model_files = tarfile.open(os.path.join(model_dir , 'model.tar'))
             model_files.extractall(model_dir)
             model_files.close()
