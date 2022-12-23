@@ -42,7 +42,7 @@ containers:
         - server
         - -host=localhost:8889
         - -server-prefix=/sys/filesyncer
-      image: cxyacr.azurecr.cn/docker.io/onepanel/filesyncer:v1.0.0
+      image: cxyacr.azurecr.cn/aimp/file-syncer:v1.0
       imagePullPolicy: IfNotPresent
       name: sys-filesyncer
       volumeMounts:
