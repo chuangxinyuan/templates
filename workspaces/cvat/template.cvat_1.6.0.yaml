@@ -8,7 +8,7 @@ containers:
           value: trust
         - name: PGDATA
           value: /var/lib/psql/data
-      image: postgres:10-alpine
+      image: cxyacr.azurecr.cn/docker.io/postgres:10-alpine
       name: cvat-db
       ports:
         - containerPort: 5432
@@ -16,7 +16,7 @@ containers:
       volumeMounts:
         - mountPath: /var/lib/psql
           name: db
-    - image: redis:4.0-alpine
+    - image: cxyacr.azurecr.cn/docker.io/redis:4.0-alpine
       name: cvat-redis
       ports:
         - containerPort: 6379
@@ -37,13 +37,13 @@ containers:
         - name: CVAT_DATA_DIR
           value: /home/django/data
         - name: CVAT_MEDIA_DATA_DIR
-          value: /home/django/data/data
+          value: /chome/django/data/data
         - name: CVAT_KEYS_DIR
           value: /home/django/data/keys
         - name: CVAT_MODELS_DIR
           value: /home/django/data/models
         - name: CVAT_LOGS_DIR
-          value: /home/django/data/logs
+          value: /cvat/logs
         - name: CVAT_ANNOTATIONS_OBJECT_STORAGE_PREFIX
           value: artifacts/$(ONEPANEL_RESOURCE_NAMESPACE)/annotations/
         - name: CVAT_ONEPANEL_WORKFLOWS_LABEL
@@ -56,20 +56,22 @@ containers:
           value: cuda>=10.0 brand=tesla,driver>=384,driver<385 brand=tesla,driver>=410,driver<411
         - name: ONEPANEL_MAIN_CONTAINER
           value: "true"
-      image: openvino/cvat_server:v1.6.0
+        - name: CVAT_SERVERLESS
+          value: true
+      image: cxyacr.azurecr.cn/docker.io/onepanel/cvat:v1.0.2_cvat.1.6.0
       name: cvat
       ports:
         - containerPort: 8080
           name: http
       volumeMounts:
         - mountPath: /home/django/data
-          name: data
-        - mountPath: /home/django/share
+          name: cvat-data
+        - mountPath:  /home/django/share
           name: share
         - mountPath: /etc/onepanel
           name: sys-namespace-config
           readOnly: true
-    - image: openvino/cvat_ui:v1.6.0
+    - image: cxyacr.azurecr.cn/docker.io/onepanel/cvat-ui:v1.0.2_cvat.1.6.0
       name: cvat-ui
       ports:
         - containerPort: 80
@@ -81,7 +83,7 @@ containers:
       imagePullPolicy: Always
       name: sys-filesyncer
       volumeMounts:
-        - mountPath: /home/django/share
+        - mountPath: /share
           name: share
         - mountPath: /etc/onepanel
           name: sys-namespace-config
@@ -109,7 +111,7 @@ routes:
                 number: 8888
     - match:
         - uri:
-            regex: /api/.*|/git/.*|/tensorflow/.*|/onepanelio/.*|/tracking/.*|/auto_annotation/.*|/analytics/.*|/static/.*|/admin/.*|/documentation/.*|/dextr/.*|/reid/.*
+            regex: \/?api.*|\/?git.*|\/?tensorflow.*|\/?onepanelio.*|\/?tracking.*|\/?auto_annotation.*|\/?analytics.*|\/?static.*|\/?admin.*|\/?documentation.*|\/?dextr.*|\/?reid.*|\/?django-rq.*
         - queryParams:
             id:
                 regex: \d+.*
