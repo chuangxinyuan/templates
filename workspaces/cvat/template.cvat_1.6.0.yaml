@@ -37,7 +37,7 @@ containers:
         - name: CVAT_DATA_DIR
           value: /home/django/data
         - name: CVAT_MEDIA_DATA_DIR
-          value: /chome/django/data/data
+          value: /home/django/data/data
         - name: CVAT_KEYS_DIR
           value: /home/django/data/keys
         - name: CVAT_MODELS_DIR
@@ -66,7 +66,7 @@ containers:
       volumeMounts:
         - mountPath: /home/django/data
           name: cvat-data
-        - mountPath:  /home/django/share
+        - mountPath: /home/django/share
           name: share
         - mountPath: /etc/onepanel
           name: sys-namespace-config
