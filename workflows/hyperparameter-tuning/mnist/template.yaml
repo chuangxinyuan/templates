@@ -9,8 +9,9 @@ arguments:
     # [CHANGE] Path to your training/model architecture code repository
     # Change this value and revision value to your code repository and branch respectively
     - name: source
-      value: https://github.com/chuangxinyuan/templates
-      #value: https://gitee.com/chuangxinyuan/templates
+#      value: https://github.com/chuangxinyuan/templates
+      value: https://gitee.com/chuangxinyuan/templates
+      artifacts/{{workflow.namespace}}/aimp/dataset/物体检测1/2023-06-20 09:42:54/
 
     # [CHANGE] Revision is the branch or tag that you want to use
     # You can change this to any tag or branch name in your repository
@@ -123,7 +124,7 @@ templates:
         - name: hyperparamtuning-output
           mountPath: /mnt/output
     nodeSelector:
-      beta.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
+      node.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
     sidecars:
       - name: nni-web-ui
         image: cxyacr.azurecr.cn/docker.io/onepanel/nni-web-ui:0.17.0
@@ -177,11 +178,11 @@ volumeClaimTemplates:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 20Gi
+          storage: 2Gi
   - metadata:
       name: hyperparamtuning-output
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 20Gi
+          storage: 2Gi

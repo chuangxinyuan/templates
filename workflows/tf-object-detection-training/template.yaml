@@ -149,18 +149,18 @@ templates:
               s3:
                 key: '{{workflow.parameters.cvat-finetune-checkpoint}}'
             - git:
-                repo: https://github.com/chuangxinyuan/models.git
+                repo: https://gitee.com/chuangxinyuan/models.git
                 revision: v1.13.0
               name: src
               path: /mnt/src/tf
             - git:
-                repo: https://github.com/chuangxinyuan/templates.git
+                repo: https://gitee.com/chuangxinyuan/templates.git
                 revision: aimp-v0.95
               name: tsrc
               path: /mnt/src/train
       name: tensorflow
       nodeSelector:
-        'node.kubernetes.io/instance-type': '{{workflow.parameters.sys-node-pool}}'
+        node.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
       outputs:
         artifacts:
             - name: model
@@ -208,13 +208,13 @@ templates:
               s3:
                 key: '{{workflow.parameters.cvat-annotation-path}}'
             - git:
-                repo: https://github.com/chuangxinyuan/templates.git
+                repo: https://gitee.com/chuangxinyuan/templates.git
                 revision: aimp-v0.95
               name: src
               path: /mnt/src/preprocessing
       name: preprocessing
       nodeSelector:
-        'beta.kubernetes.io/instance-type': '{{workflow.parameters.sys-node-pool}}'
+        node.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
       outputs:
         artifacts:
             - name: processed-data
@@ -228,7 +228,7 @@ volumeClaimTemplates:
             - ReadWriteOnce
         resources:
             requests:
-                storage: 200Gi
+                storage: 2Gi
     - metadata:
         name: processed-data
       spec:
@@ -236,7 +236,7 @@ volumeClaimTemplates:
             - ReadWriteOnce
         resources:
             requests:
-                storage: 200Gi
+                storage: 2Gi
     - metadata:
         name: output
       spec:
@@ -244,4 +244,4 @@ volumeClaimTemplates:
             - ReadWriteOnce
         resources:
             requests:
-                storage: 200Gi
+                storage: 2Gi

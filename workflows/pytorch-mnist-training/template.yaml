@@ -158,7 +158,7 @@ templates:
         - name: output
           mountPath: /mnt/output
     nodeSelector:
-      beta.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
+      node.kubernetes.io/instance-type: '{{workflow.parameters.sys-node-pool}}'
     sidecars:
       - name: tensorboard
         image: cxyacr.azurecr.cn/docker.io/onepanel/dl:0.17.0

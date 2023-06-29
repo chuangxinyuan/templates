@@ -132,8 +132,8 @@ templates:
           s3:
             key: '{{workflow.parameters.cvat-finetune-checkpoint}}'
         - git:
-            repo: https://github.com/onepanelio/templates.git
-            revision: v0.18.0
+            repo: https://gitee.com/onepanelio/templates.git
+            revision: aimp-v0.95
           name: src
           path: /mnt/src/train
     name: tensorflow
@@ -170,8 +170,8 @@ templates:
           s3:
             key: '{{workflow.parameters.cvat-annotation-path}}'
         - git:
-            repo: https://github.com/onepanelio/templates.git
-            revision: v0.18.0
+            repo: https://gitee.com/onepanelio/templates.git
+            revision: aimp-v0.95
           name: src
           path: /mnt/src/preprocessing
     name: preprocessing
@@ -188,7 +188,7 @@ volumeClaimTemplates:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 200Gi
+          storage: 2Gi
   - metadata:
       name: processed-data
     spec:
@@ -196,7 +196,7 @@ volumeClaimTemplates:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 200Gi
+          storage: 2Gi
   - metadata:
       name: output
     spec:
@@ -204,4 +204,4 @@ volumeClaimTemplates:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 200Gi
+          storage: 2Gi
